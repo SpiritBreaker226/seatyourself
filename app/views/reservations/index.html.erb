@@ -1,2 +1,5 @@
-<h1>Reservations#index</h1>
-<p>Find me in app/views/reservations/index.html.erb</p>
+<h1>Reservations</h1>
+
+<% @reservations.each do |reservation| %>
+<p>You have a reservation for <%= reservation.party_size %> at <%= reservation.restaurant %> at <%= reservation.time.strftime %>.</p>
+<% end %>
