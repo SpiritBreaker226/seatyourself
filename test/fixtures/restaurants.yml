@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyText
+  description: MyText
+  capacity: 1
+  hours_open: 2015-02-11 15:06:12
+  hours_closed: 2015-02-11 15:06:12
+
+two:
+  name: MyString
+  address: MyText
+  description: MyText
+  capacity: 1
+  hours_open: 2015-02-11 15:06:12
+  hours_closed: 2015-02-11 15:06:12
