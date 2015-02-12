@@ -38,6 +38,7 @@ group :development, :test do
   gem 'pry-rails'
   gem 'awesome_print'
   gem 'quiet_assets'
+  gem 'better_errors'
 
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
