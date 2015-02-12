@@ -7,17 +7,17 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header>
+<header class="cf">
 	<h1>OpenTable</h1>
 	<nav>
 		<ul>
-			<li>Some Stuff</li>
-			<li>Some other stuff</li>
+			<li><%= link_to 'Restaurants List', restaurants_url %></li>
 		<ul>
 	</nav>
 </header>
-
+<div class="wrapper cf">
 <%= yield %>
+</div>
 
 </body>
 </html>
