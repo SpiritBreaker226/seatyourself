@@ -3,5 +3,8 @@
 <div>
 	<p> Description: <%= @restaurant.description %> </p>
 	<p> Address: <%= @restaurant.address %> </p>
+	<p> Capacity: <%= @restaurant.capacity %> </p>
 	<p> Hours: <%= prettytime(@restaurant.hours_open) %> to <%= prettytime(@restaurant.hours_closed) %> </p>
 </div>
+
+<%= button_to "Edit", edit_restaurant_path, class: :button, method: :get %>
