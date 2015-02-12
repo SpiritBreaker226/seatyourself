@@ -17,7 +17,7 @@ class ReservationsController < ApplicationController
     @reservation = Reservation.new(reservation_params)
 
     if @reservation.save
-      redirect_to restaurant_url(@restaurant(params[:id])), notice: "You've created a reservation!"
+      redirect_to restaurant_url(params[:id]), notice: "You've created a reservation!"
     else
       flash.now[:alert] = "Something went wrong."
       render :new

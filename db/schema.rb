@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150211202921) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "reservations", force: :cascade do |t|
     t.datetime "time"
     t.integer  "restaurant_id"
@@ -22,8 +25,8 @@ ActiveRecord::Schema.define(version: 20150211202921) do
     t.datetime "updated_at",    null: false
   end
 
-  add_index "reservations", ["restaurant_id"], name: "index_reservations_on_restaurant_id"
-  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id"
+  add_index "reservations", ["restaurant_id"], name: "index_reservations_on_restaurant_id", using: :btree
+  add_index "reservations", ["user_id"], name: "index_reservations_on_user_id", using: :btree
 
   create_table "restaurants", force: :cascade do |t|
     t.string   "name"
