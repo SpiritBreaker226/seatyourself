@@ -17,12 +17,12 @@
 </div>
 
 <div class="field">
-	<%= f.label :hours_open %>
+	<%= f.label "Opening time" %>
 	<%= f.time_select :hours_open, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, minute_step: 15, ampm: true %>
 </div>
 
 <div class="field">
-	<%= f.label :hours_closed %>
+	<%= f.label "Closing time" %>
 	<%= f.time_select :hours_closed, prompt: {hour: 'Choose hour', minute: 'Choose minute'}, minute_step: 15, ampm: true  %>
 </div>
 
