@@ -1,4 +1,7 @@
 class RestaurantsController < ApplicationController
+  before_filter :create_reservation
+  before_filter :load_reservations
+
   def index
     @restaurants = Restaurant.all 
   end
@@ -19,8 +22,9 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
 
     if @restaurant.save
-      redirect_to restaurants_path 
+      redirect_to restaurants_path, :notice => "Restaurant created!"   
     else
+      flash.now[:alert] = "Could not save! Ensure all fields are completed."
       render :new
     end
   end
@@ -29,7 +33,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
 
     if @restaurant.update_attributes(restaurant_params)
-      redirect_to restaurants_path(@restaurant)
+      redirect_to restaurant_path(@restaurant)
     else
       render :edit
     end
@@ -46,6 +50,12 @@ class RestaurantsController < ApplicationController
     params.require(:restaurant).permit(:name, :address, :description, :capacity, :hours_open, :hours_closed)    
   end
 
+  def create_reservation
+    @reservation = Reservation.new
+  end
+
+  def load_reservations
+  end
 
 end
 

@@ -63,3 +63,12 @@ nav a:hover {
 .field {
 	margin-bottom: 1em;
 }
+
+.button {
+	background: black;
+	color: white;
+	text-decoration: none;
+	padding: 1em;
+	transition: background 1s ease;
+	transition: color 1s ease;
+}
