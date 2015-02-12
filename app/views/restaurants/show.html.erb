@@ -11,5 +11,11 @@
 <%= button_to "Edit", edit_restaurant_path, class: :button, method: :get %>
 
 <div class="reservation-form">
-	<%= render 'reservations/form' %>
+	<% if current_user %>
+	<h4>Create a Reservation</h4>
+		<%= render 'reservations/form' %>
+	<% else %>
+	<h4>Log in to make a reservation</h4>
+		<%= button_to 'Log In', login_path, class: :button, method: :get %>
+	<% end %>
 </div>
