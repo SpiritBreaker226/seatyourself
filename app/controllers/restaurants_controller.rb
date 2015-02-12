@@ -19,8 +19,9 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.new(restaurant_params)
 
     if @restaurant.save
-      redirect_to restaurants_path 
+      redirect_to restaurants_path, :notice => "Restaurant created!"   
     else
+      flash.now[:alert] = "Could not save! Ensure all fields are completed."
       render :new
     end
   end
