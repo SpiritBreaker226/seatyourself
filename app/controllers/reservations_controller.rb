@@ -1,4 +1,10 @@
 class ReservationsController < ApplicationController
+  
+  # test controller
+  # test index page
+  # create reservations
+
+
   def index
     @reservations = Reservations.all
   end
