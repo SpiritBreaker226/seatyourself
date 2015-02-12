@@ -29,7 +29,7 @@ class RestaurantsController < ApplicationController
     @restaurant = Restaurant.find(params[:id])
 
     if @restaurant.update_attributes(restaurant_params)
-      redirect_to restaurants_path(@restaurant)
+      redirect_to restaurant_path(@restaurant)
     else
       render :edit
     end
