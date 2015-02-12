@@ -3,7 +3,7 @@ Rails.application.routes.draw do
     resources :reservations, only: [:show, :create, :destroy]
   end
 
-  resources :users, only: [:new, :create]
+  resources :users, except: [:index]
 
   resources :sessions, only: [:create, :destroy]
   get 'login' => 'sessions#new', as: :login
