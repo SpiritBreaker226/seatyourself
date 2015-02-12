@@ -1,9 +1,14 @@
 <h4>Create A Reservation</h4>
 
-<%= form_for @reservation do |f| %>
+<%= form_for [@restaurant, @reservation] do |f| %>
 <div class="field">
 	<%= f.label :time %>
 	<%= f.datetime_select :time, prompt: { year: 'Year', month: 'Month', day: 'Day', hour: 'Hour', minute: false} %>
 </div>
+<div class="field">
+	<%= f.label :party_size %>
+	<%= f.text_field :party_size %>
+</div>
 <%= f.submit %>
+
 <%end%>
