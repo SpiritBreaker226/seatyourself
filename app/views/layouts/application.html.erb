@@ -7,26 +7,25 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<header class="cf">
-	<h1>OpenTable</h1>
-	<nav>
-		<ul>
-			<li><%= link_to 'Restaurants List', restaurants_path %></li>
-			<li><%= link_to 'Add A Restaurant', new_restaurant_path %></li>
-		<ul>
-	</nav>
-</header>
-<div class="wrapper cf">
+	<header class="cf">
+		<h1>OpenTable</h1>
+		<nav>
+			<ul>
+				<li><%= link_to 'Restaurants List', restaurants_url %></li>
+			<ul>
+		</nav>
+	</header>
 
-<% if flash[:notice] %>
-	<p id="notice"><%= flash[:notice] %></p>
-<% end %>
-<% if flash[:alert] %>
-	<p id="alert"><%= flash[:alert] %></p>
-<% end %>
+	<div class="wrapper cf">
+	
+		<% if flash[:notice] %>
+		  <p id="notice"><%= flash[:notice] %></p>
+		<% end %>
+		<% if flash[:alert] %>
+		  <p id="alert"><%= flash[:alert] %></p>
+		<% end %>
 
-<%= yield %>
-</div>
-
+		<%= yield %>
+	</div>
 </body>
 </html>

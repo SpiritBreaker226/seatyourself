@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :restaurants do
-    resources :reservations, only: [:show, :create, :destroy]
+    resources :reservations, only: [:create, :destroy]
   end
 
   resources :users, only: [:new, :create]

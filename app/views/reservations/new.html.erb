@@ -1,0 +1,9 @@
+<h1>Create A Reservation</h1>
+
+<%= form_for @reservation do |f| %>
+<div class="field">
+	<%= f.label :time %>
+	<%= f.datetime_select :time, prompt: { year: 'Year', month: 'Month', day: 'Day', hour: 'Hour', minute: false} %>
+</div>
+<%= f.submit %>
+<%end%>
