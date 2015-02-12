@@ -1,4 +1,7 @@
-<h1>Restaurants#show</h1>
-<p>Find me in app/views/restaurants/show.html.erb</p>
+<h1><%= @restaurant.name %></h1>
 
-
+<div>
+	<p> Description: <%= @restaurant.description %> </p>
+	<p> Address: <%= @restaurant.address %> </p>
+	<p> Hours: <%= prettytime(@restaurant.hours_open) %> to <%= prettytime(@restaurant.hours_closed) %> </p>
+</div>
