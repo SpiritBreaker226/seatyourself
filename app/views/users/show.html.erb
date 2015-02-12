@@ -1,2 +1,6 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<%= button_to("Edit", edit_user_path, class: "button", method: :get) %> | <%= button_to("Cancel Account", @user, class: "button", method: :delete, data: { confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name}?" }) %>
+
+<p>
+	Email: <%= @user.email %>
+</p>
