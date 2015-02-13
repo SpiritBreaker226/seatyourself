@@ -3,6 +3,7 @@ class Reservation < ActiveRecord::Base
   belongs_to :user
 
   validates :party_size, :time, presence: true 
+  validates :party_size, numericality: {greater_than: 0}
 
   validate :availability, :within_opening_hours 
 
