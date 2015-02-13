@@ -68,6 +68,11 @@ nav a:hover {
 	margin-bottom: 1em;
 }
 
+.edit-buttons {
+	display: inline-block;
+	margin: 1em 0;
+}
+
 .button {
 	background: black;
 	color: white;

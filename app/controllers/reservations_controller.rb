@@ -1,5 +1,4 @@
 class ReservationsController < ApplicationController
-  
   before_filter :find_restaurant
 
   def index
