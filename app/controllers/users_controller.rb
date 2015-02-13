@@ -56,6 +56,8 @@ class UsersController < ApplicationController
   end
 
   def find_reservations
-    @reservations = User.find(params[:id]).reservations
+    if current_user
+      @reservations = User.find(params[:id]).reservations
+    end
   end
 end

@@ -1,7 +1,7 @@
 <%= form_for [@restaurant, @reservation] do |f| %>
 <div class="field">
 	<%= f.label :time %>
-	<%= f.datetime_select :time, prompt: { year: 'Year', month: 'Month', day: 'Day', hour: 'Hour', minute: false} %>
+	<%= f.datetime_select :time, prompt: { year: 'Year', month: 'Month', day: 'Day', hour: 'Hour', minute: 'false'} %>
 </div>
 <div class="field">
 	<%= f.label :party_size %>
