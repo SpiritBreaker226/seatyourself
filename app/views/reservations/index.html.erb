@@ -1,5 +1,11 @@
-<h1>Reservations</h1>
-
-<% @reservations.each do |reservation| %>
-<p>You have a reservation for <%= reservation.party_size %> at <%= reservation.restaurant %> at <%= reservation.time.strftime %>.</p>
-<% end %>
+<h2>Reservations at <%= @restaurant.name %></h2>
+<ul>
+	<% @reservations.each do |reservation| %>
+		<dl>
+			<dt>Client Name: <%= reservation.user.first_name %> <%= reservation.user.last_name %></dt>
+				<dd>Party Size: <%= reservation.party_size %></dd>
+				<dd>Time: <%= reservation.time.to_formatted_s(:time) %></dd>
+				<dd>Date: <%= reservation.time.to_s(:day) %>.</dd>
+		</dd>
+	<% end %>
+</ul>

@@ -49,8 +49,8 @@ nav a {
 	color: white;
 	text-decoration: none;
 	padding: 1em;
-	transition: background 1s ease;
-	transition: color 1s ease;
+	transition: background-color 2s ease;
+	transition: color 2s ease;
 }
 
 nav a:hover {
