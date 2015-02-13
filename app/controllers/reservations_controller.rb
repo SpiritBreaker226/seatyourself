@@ -1,4 +1,5 @@
 class ReservationsController < ApplicationController
+  before_filter :ensure_logged_in, except: [:show]
   before_filter :find_restaurant
 
   def index
