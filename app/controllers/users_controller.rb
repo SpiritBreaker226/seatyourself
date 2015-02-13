@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :ensure_logged_in, only: [:edit, :update]
+
   before_filter :find_reservations
 
   def new
