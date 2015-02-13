@@ -18,7 +18,7 @@ class ReservationsController < ApplicationController
       redirect_to @restaurant, notice: "You've created a reservation!"
     else
       flash.now[:alert] = "Something went wrong."
-      render restaurant_path
+      render 'restaurants/show'
     end
   end
 
