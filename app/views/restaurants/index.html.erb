@@ -2,12 +2,14 @@
 
 <% @restaurants.each do |restaurant| %>
 	<div>
-		<p> Name: <%= link_to restaurant.name, restaurant_path(restaurant) %> </p>
+		<h3> Name: <%= link_to restaurant.name, restaurant_path(restaurant) %> </h3>
 		<p> Description: <%= restaurant.description %> </p>
 		<p> Address: <%= restaurant.address %> </p>
 		<p> Capacity: <%= restaurant.capacity %> </p>
 		<p> Hours: <%= prettytime(restaurant.hours_open) %> to <%= prettytime(restaurant.hours_closed) %> </p>
 	</div>
+<br>
 <% end %>
+
 
 
