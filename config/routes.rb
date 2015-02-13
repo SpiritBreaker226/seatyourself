@@ -3,7 +3,8 @@ Rails.application.routes.draw do
     resources :reservations, only: [:create, :destroy, :index]
   end
 
-  resources :users, except: [:index]
+  resources :users, except: [:index, :new]
+  get 'signup' => 'users#new', as: :signup
 
   resources :sessions, only: [:create, :destroy]
   get 'login' => 'sessions#new', as: :login
