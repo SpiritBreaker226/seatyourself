@@ -3,8 +3,12 @@ class Restaurant < ActiveRecord::Base
 	has_many :reservations
 
 	def available? (party_size, time)
-		reservation_count = reservations.sum(:party_size)
+		reservation_count = reservations.where(time: time).sum(:party_size)
 		party_size + reservation_count <= capacity 
+	end
+
+	def open?(datetime)
+		datetime.time >= hours_open && datetime.time <= hours_closed 
 	end
 
 end

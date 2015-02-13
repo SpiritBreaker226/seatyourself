@@ -4,12 +4,18 @@ class Reservation < ActiveRecord::Base
 
   validates :party_size, :time, presence: true 
 
-  validate :availability 
+  validate :availability, :within_opening_hours 
 
   private
   	def availability 
   		if !restaurant.available?(party_size, time)
   			errors.add(:base, "Restaurant is full. Please try a different time.")
+  		end
+  	end
+
+  	def within_opening_hours
+  		if !restaurant.open?(time)
+  			errors.add(:base, "Restaurant is closed. Please make a reservation within opening hours.")
   		end
   	end
 
