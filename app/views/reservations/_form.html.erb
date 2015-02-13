@@ -14,7 +14,7 @@
 
 <div class="field">
 	<%= f.label :time %>
-	<%= f.datetime_select :time, prompt: { year: Time.now.year, month: 'Month', day: 'Day', hour: 'Hour', minute: false} %>
+	<%= f.datetime_select(:time, start_year: Time.now.year, prompt: false, minute_step: 60 ) %>
 </div>
 <div class="field">
 	<%= f.label :party_size %>
