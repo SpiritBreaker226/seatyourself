@@ -29,6 +29,19 @@ body {
 	font-size: 1.2em;
 }
 
+header {
+	margin-bottom: 1.5em;
+}
+
+header h1 {
+	width: 33%;
+}
+
+header img {
+	width: 100%;
+}
+
+
 nav ul li {
 	list-style: none;
 	display: inline-block;
@@ -45,8 +58,8 @@ nav a {
 	color: white;
 	text-decoration: none;
 	padding: 1em;
-	transition: background 1s ease;
-	transition: color 1s ease;
+	transition: background-color 2s ease;
+	transition: color 2s ease;
 }
 
 nav a:hover {
@@ -62,6 +75,11 @@ nav a:hover {
 
 .field {
 	margin-bottom: 1em;
+}
+
+.edit-buttons {
+	display: inline-block;
+	margin: 1em 0;
 }
 
 .button {
