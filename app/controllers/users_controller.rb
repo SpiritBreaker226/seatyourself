@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :ensure_logged_in, only: [:edit, :update]
+
   before_filter :find_reservations
 
   def new
@@ -9,7 +11,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
-      redirect_to(restaurants_path, notice: "#{@user.first_name} #{@user.last_name} has been created")
+      redirect_to(restaurants_path, notice: "#{@user.name} has been created")
     else
       flash.now[:alert] = "Unable to create user"
       render :new
@@ -34,7 +36,7 @@ class UsersController < ApplicationController
     # end
 
     if @user.update_attributes(user_params)
-      redirect_to(user_path(@user), notice: "#{@user.first_name} #{@user.last_name} has been updated")
+      redirect_to(user_path(@user), notice: "#{@user.name} has been updated")
     else
       flash.now[:alert] = "Unable to update user"
       render :edit
@@ -44,7 +46,7 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to(restaurants_path, notice: "#{@user.first_name} #{@user.last_name} has been created")
+    redirect_to(restaurants_path, notice: "#{@user.name} has been created")
   end
 
   private
