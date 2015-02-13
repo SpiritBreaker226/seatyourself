@@ -8,7 +8,7 @@ class Restaurant < ActiveRecord::Base
 	end
 
 	def open?(datetime)
-		datetime.time.hour >= hours_open.hour && datetime.time.hour < hours_closed.hour
+		datetime.time.hour >= hours_open.hour && datetime.time.hour < hours_closed.hour + 24
 	end
 
 end
