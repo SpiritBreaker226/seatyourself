@@ -1,0 +1,18 @@
+<h1><%= @user.first_name %> <%= @user.last_name %></h1>
+<<<<<<< HEAD
+=======
+<%= button_to("Edit", edit_user_path, class: "button", method: :get) %> | <%= button_to("Cancel Account", @user, class: "button", method: :delete, data: { confirm: "Are you sure you want to delete #{@user.name}?" }) %>
+
+>>>>>>> Add Name(), User Model To Display Users Full Name
+<p>
+	Email: <%= @user.email %>
+</p>
+
+<div class="edit-buttons">
+	<%= link_to("Edit", edit_user_path, class: "button" ) %>
+	<%= link_to("Cancel Account", @user, class: "button", data: { confirm: "Are you sure you want to delete #{@user.first_name} #{@user.last_name}?" }) %>
+</div>
+
+<div class="user-reservations">
+	<%= render 'reservations/user_reservations' %>
+</div>
