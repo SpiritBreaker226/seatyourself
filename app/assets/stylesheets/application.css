@@ -29,6 +29,10 @@ body {
 	font-size: 1.2em;
 }
 
+header {
+	margin-bottom: 1.5em;
+}
+
 nav ul li {
 	list-style: none;
 	display: inline-block;
