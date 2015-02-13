@@ -1,8 +1,8 @@
-<h2>Reservations at <%= @restaurant.name %></h2>
+<h2>Your Reservations</h2>
 <ul>
 	<% @reservations.each do |reservation| %>
 		<dl>
-			<dt>Client Name: <%= reservation.user.first_name %> <%= reservation.user.last_name %></dt>
+			<dt>Restaurant Name: <%= reservation.restaurant.name %></dt>
 				<dd>Party Size: <%= reservation.party_size %></dd>
 				<dd>Time: <%= reservation.time.to_formatted_s(:time) %></dd>
 				<dd>Date: <%= reservation.time.to_s(:day) %>.</dd>
