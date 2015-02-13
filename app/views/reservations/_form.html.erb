@@ -1,4 +1,17 @@
 <%= form_for [@restaurant, @reservation] do |f| %>
+
+	<% if @restaurant.errors.any? %>
+		<div class="error_messages">
+			<h2>Form is invalid</h2>
+
+			<ul>
+			<% for message in @restaurant.errors.full_messages %>
+				<li><%= message %></li>
+			<% end %>
+			</ul>
+		</div>
+	<% end %>
+
 <div class="field">
 	<%= f.label :time %>
 	<%= f.datetime_select :time, prompt: { year: 'Year', month: 'Month', day: 'Day', hour: 'Hour', minute: false} %>
