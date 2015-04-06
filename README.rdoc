@@ -1,4 +1,4 @@
 == Seat Yourself
 === Bitmaker: Week 4
 
-In the Wednesday till Friday assignment, we created a clone of OpenTable. This application allows the user to sign up then is able to create restaurants and reservations.
+For the Wednesday till Friday assignment, we created a clone of OpenTable. This application allows the user to sign up then is able to create restaurants and reservations.
